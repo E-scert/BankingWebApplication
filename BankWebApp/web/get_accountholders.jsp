@@ -15,14 +15,11 @@
         <h1>Get Account Holder</h1>
         <form action="GetAccountHolderServlet.do" method="GET">
         <table>
-            <tr>
-                <td>ID:</td>
-                <td><input type="text" name="id"/></td>
-            </tr>
+            
             
             <tr>
                 <td></td>
-                <td><input type="submit" value="GET ACCOUNT HOLDER"/></td>
+                <td><input type="submit" value="GET ACCOUNT HOLDERs"/></td>
             </tr>
         </table>
     </form>

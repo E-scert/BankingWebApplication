@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SecondaryTable;
+import javax.persistence.SecondaryTables;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -21,6 +23,7 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table (name="ACCOUNTHOLDERS_TBL")
+@SecondaryTables({@SecondaryTable(name="ADDRESS_TBL"),@SecondaryTable(name="CONTACTS_TBL"),@SecondaryTable(name="BALANCE_TBL")})
 public class AccountHolder implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -29,15 +32,15 @@ public class AccountHolder implements Serializable {
     private Long id;
     @Column(nullable = false, length = 50)
     private String fullName;
-     @Column(table="ADDRESS_TBL",nullable = false, length = 20)
+     @Column(table="ADDRESS_TBL",nullable = false, length = 100)
     private String street;
-     @Column(table="ADDRESS_TBL",nullable = false, length = 20)
+     @Column(table="ADDRESS_TBL",nullable = false, length = 100)
     private String city;
-     @Column(table="ADDRESS_TBL",nullable = false, length = 20)
+     @Column(table="ADDRESS_TBL",nullable = false, length = 100)
     private String code;
-     @Column(table="CONTACTS_TBL",nullable = false, length = 20)
+     @Column(table="CONTACTS_TBL",nullable = false, length = 100)
     private String cellNo;
-     @Column(table="CONTACTS_TBL",nullable = false, length = 20)
+     @Column(table="CONTACTS_TBL",nullable = false, length = 100)
     private String emailAddress;
      @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date creationDate;
